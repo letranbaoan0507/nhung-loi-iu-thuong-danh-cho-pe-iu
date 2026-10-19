@@ -98,4 +98,11 @@ export const giftStyles=fontStyles+String.raw`
 .gf-transition-out{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none!important;contain:layout paint}
 .gf-transition-out *{pointer-events:none!important}
 @media(prefers-reduced-motion:reduce){.gf-transition-out{display:none!important}}
+.st-viewer-entry{height:100vh;height:100dvh;min-height:100svh}
+.gf-install-help{position:absolute;z-index:25;inset:0;display:flex;align-items:center;justify-content:center;background:#070911d9;padding:24px;backdrop-filter:blur(7px);pointer-events:auto}
+.gf-install-help>div{width:min(430px,100%);border:1px solid #efbfd74d;border-radius:18px;background:#1c1424;padding:24px;text-align:left;box-shadow:0 15px 60px #0007}
+.gf-install-help h3{font-size:20px;line-height:1.5;margin:0 0 14px}.gf-install-help p,.gf-install-help li{font-size:14px;line-height:1.7;color:#e5cfdf}.gf-install-help ol{padding-left:23px}.gf-install-help button{display:block;margin-top:16px;padding:10px 18px;border-radius:30px;border:1px solid #efbfd75e;background:#f1b5d018;color:#ffe8f2}
+.gf-intro .gf-home-help{margin:12px 0 0;border:0;background:none;box-shadow:none;font-size:11px;padding:7px 12px;text-decoration:underline;color:#c7b0c5}
+.gift-root .gf-controls{bottom:max(3%,env(safe-area-inset-bottom))}
+.gift-root .gf-vinyl{bottom:max(3%,env(safe-area-inset-bottom))}
 `;

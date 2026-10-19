@@ -1,0 +1,2 @@
+// Static, trusted markup: visible in the server HTML before JS or media arrive.
+export function giftEntryHTML(){return '<main class="st-viewer-page"><section class="gift-root st-viewer-entry"><div class="gf-intro"><div class="gf-envelope" aria-hidden="true">♡</div><span class="gf-intro-for">MỘT MÓN QUÀ DÀNH CHO BẠN</span><h2>Có một điều nhỏ muốn nói…</h2><button type="button" data-viewer-open>Mở lời thương</button><p class="gf-intro-note" id="viewerStatus" role="status">Chạm để mở món quà.</p></div></section></main>';}

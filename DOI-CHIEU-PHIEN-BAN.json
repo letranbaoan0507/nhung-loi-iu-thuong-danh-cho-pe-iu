@@ -1,19 +1,19 @@
 {
   "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
-  "source_commit": "db8688e0538de3a964c55aea501eb0911df8945f",
-  "published_version": 18,
+  "source_commit": "5d98cbc2dc3f14da3ebebe53cecd7962471801d5",
+  "published_version": 20,
   "unchanged_ui_and_assets": {
     "app/globals.css": "4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648",
     "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
-    "app/studio-client.tsx": "e92ca42e1a16147ccb681330e23fc4f85abae729663ba684dc1333209772ba7e",
-    "app/lib/editor.mjs": "fb2859361f76f20513e5731f93eacef80b21758a987112246d5c406f1ffe8ad0",
-    "app/lib/gift-runtime.mjs": "6b0250dab0d28b0fd6901fbb9f76126221a374b083d1f8e43ea6d9f42fdfce19",
-    "app/lib/gift-style.mjs": "4759e675e0ce2c04a34f36b1bdde48a1300dad148b53c09243c2869c407f560b",
+    "app/studio-client.tsx": "7aaf1f9e888d34d5fbcfbe9d021ba0bb97484692a084d75c14c220560c9ed308",
+    "app/lib/editor.mjs": "9fa2b070a957107f179ce98027fd4d55103160719fe072a7025fce1d3effd107",
+    "app/lib/gift-runtime.mjs": "dc5cfcba6e3004555dd098e5860dd72a1a7fd414db53ff1ddfb2f76b7f53505a",
+    "app/lib/gift-style.mjs": "da19d203dc5f75869bd779df5bf2a58d87c1bffba3d82e61865af7eefb214bd7",
     "app/lib/model.mjs": "044417d95e63c2a91161ccd17abe3d72a7e7104c806991e01989fc88f51a5e75",
     "app/lib/font-style.mjs": "22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e",
     "app/lib/scene-timing.mjs": "861ac7a04ffd7cb86e539cab6fa7b0770a3ecb75c208f731c110287ebae3db53",
     "app/lib/crypto.mjs": "d5c186c0ed2af1077098efc88940695fd85ba32c90c4e2c245747b808470b982",
-    "app/lib/viewer.mjs": "c7c8ab063cf52f92c4191d0080d473b1d4d5f8aa6cda1ea921ab91db5ba4dd32",
+    "app/lib/viewer.mjs": "56863bb0a1aee52557fe4a5f58883f6a7d92dc0c8b98a226b02383e0f4b189b2",
     "app/lib/offline.mjs": "5d598c6d905b138bff3c977021bd4778123e35580553ba55ffbfbcad472ed1c8",
     "public/qr.js": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
     "public/globe.svg": "d051a8c47936990a9085693d307bb7cea1bc1b6d7ed956bcbaacf674f4ec96b9",
@@ -29,7 +29,9 @@
     "public/fonts/LICENSE-DejaVu.txt": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
     "public/fonts/loithuong-sans-bold.woff": "67160c6d7fae9c63eb76d7d499eb50d0aa7b54a4d84be72ec8777b85ed0dfce0",
     "app/lib/heart-qr.mjs": "695f99148bdd99348720a96b795c441a58419a798b9e1dfb014878b4e8e652f9",
-    "app/lib/share-link.mjs": "88ae8ed63cf4b8285d0c9cc8dabbb2f79150c398b2ff9465173219c79be4b36d"
+    "app/lib/share-link.mjs": "88ae8ed63cf4b8285d0c9cc8dabbb2f79150c398b2ff9465173219c79be4b36d",
+    "app/lib/gift-entry.mjs": "e6f48228547cbada36b464da6f99584aec27997f89c76233a34d1f01e51bc76c",
+    "app/lib/gift-manifest.mjs": "f5d7a28e7fba4bd94e51ff1b61c0954b3699f7c6745f3f601303a2218f6e9848"
   },
   "vercel_changes": [
     "Next.js hosting configuration",
@@ -50,11 +52,14 @@
     "Heart QR matches supplied pattern without an inner square gap",
     "Fullscreen with native/Safari API and viewport fallback",
     "Per-slide combined matched-motion transitions, overlap, zoom, blur and apply-to-all",
-    "QR uses the recipient HTML page with an Open gift button"
+    "QR uses the recipient HTML page with an Open gift button",
+    "Immediate server-rendered Open gift landing; media streams or decrypts concurrently in the background",
+    "iPhone Home Screen standalone manifest and honest browser fullscreen fallback guidance",
+    "Download QR exports a PNG image only, never gift HTML"
   ],
   "historical_build_archive": {
     "path": "ban-build-sites.tar.gz",
     "published_version": 12,
-    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 18."
+    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 20."
   }
 }

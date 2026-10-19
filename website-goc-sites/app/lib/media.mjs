@@ -68,6 +68,43 @@ export async function saveOnline(config,assets,password='',saved=null,onProgress
   if(!committed)await Promise.allSettled(uploaded.map(id=>fetch('/api/assets/'+id,{method:'DELETE',signal:AbortSignal.timeout(10000)})));
  }
 }
-export async function loadOnline(id,password='',onProgress=()=>{}){if(!/^[a-f0-9-]{36}$/i.test(id))throw Error('Mã món quà không hợp lệ.');const response=await api('/api/gifts/'+id),record=await response.json();if(record.envelope.encrypted&&!password)return {locked:true,record};const {value,key}=await openJSON(record.envelope,password),config=validateConfig(value.config),assets=new Map();let total=0;for(const [i,ref] of assetRefs(config).entries()){const a=value.manifest?.[ref];if(!a||!/^[a-f0-9-]{36}$/i.test(a.assetId)||![...imageTypes,...audioTypes].includes(a.mime))throw Error('Thông tin ảnh/nhạc không hợp lệ.');onProgress(`Đang mở ảnh và nhạc ${i+1}…`);const result=await api('/api/assets/'+a.assetId);let bytes=await result.arrayBuffer();if(key)bytes=await decryptBytes(bytes,key,a.iv);total+=bytes.byteLength;if(bytes.byteLength>LIMITS.asset||total>LIMITS.total)throw Error('Nội dung vượt dung lượng hỗ trợ.');assets.set(ref,{blob:new Blob([bytes],{type:a.mime}),name:String(a.name||'tep').slice(0,150),mime:a.mime,kind:a.kind});}return {locked:false,config,assets,record};}
+export async function loadGiftHeader(id,password='',record=null,{signal}={}){
+ if(!/^[a-f0-9-]{36}$/i.test(id))throw Error('Mã món quà không hợp lệ.');
+ signal?.throwIfAborted();
+ record??=await (await api('/api/gifts/'+id,{signal})).json();
+ if(record.envelope.encrypted&&!password)return {locked:true,record};
+ const {value,key}=await openJSON(record.envelope,password),config=validateConfig(value.config);
+ signal?.throwIfAborted();
+ return {locked:false,config,manifest:value.manifest,key,assets:new Map(),record};
+}
+function manifestAsset(header,ref){
+ const a=header.manifest?.[ref];
+ if(!a||!/^[a-f0-9-]{36}$/i.test(a.assetId)||![...imageTypes,...audioTypes].includes(a.mime))throw Error('Thông tin ảnh/nhạc không hợp lệ.');
+ return a;
+}
+export function streamGiftConfig(header){
+ if(header.key||header.record.envelope.encrypted)throw Error('Quà có mật khẩu cần giải mã tệp trên thiết bị.');
+ const src=ref=>ref?'/api/assets/'+manifestAsset(header,ref).assetId:'',c=header.config;
+ return {...c,backgroundSrc:src(c.background),stickerSrc:src(c.sticker),audioSrc:src(c.audio),photos:c.photos.map(p=>({...p,src:src(p.id)}))};
+}
+export async function loadGiftAssets(header,onProgress=()=>{},{signal,onAsset=()=>{},concurrency=3}={}){
+ const refs=assetRefs(header.config);for(const ref of refs)manifestAsset(header,ref);
+ let cursor=0,done=0,total=0;
+ async function worker(){
+  while(cursor<refs.length){
+   signal?.throwIfAborted();const ref=refs[cursor++],a=manifestAsset(header,ref);
+   const result=await api('/api/assets/'+a.assetId,{signal});let bytes=await result.arrayBuffer();
+   if(header.key)bytes=await decryptBytes(bytes,header.key,a.iv);signal?.throwIfAborted();
+   total+=bytes.byteLength;if(bytes.byteLength>LIMITS.asset||total>LIMITS.total)throw Error('Nội dung vượt dung lượng hỗ trợ.');
+   header.assets.set(ref,{blob:new Blob([bytes],{type:a.mime}),name:String(a.name||'tep').slice(0,150),mime:a.mime,kind:a.kind});
+   onProgress(`Đang chuẩn bị ảnh và nhạc ${++done} / ${refs.length}…`);onAsset(ref);
+  }
+ }
+ await Promise.all(Array.from({length:Math.min(Math.max(1,concurrency),refs.length)},worker));return header;
+}
+export async function loadOnline(id,password='',onProgress=()=>{}){
+ const result=await loadGiftHeader(id,password);if(result.locked)return result;
+ return loadGiftAssets(result,onProgress);
+}
 export async function listOnline(offset=0){return (await api('/api/gifts?offset='+offset+'&limit=24')).json();}
 export async function deleteOnline(id){return (await api('/api/gifts/'+id,{method:'DELETE'})).json();}
