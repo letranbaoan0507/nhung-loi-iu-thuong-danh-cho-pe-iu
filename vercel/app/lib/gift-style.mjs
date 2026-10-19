@@ -36,9 +36,15 @@ export const giftStyles=fontStyles+String.raw`
 .gf-paused .gf-wink-hearts i,.gf-paused .gf-night-sky>i,.gf-paused .gf-dream-star{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.gf-wink-hearts i{display:none}.gf-wink-hearts i:first-child{display:block;opacity:1;transform:translate(15px,-25px)}.gf-night-sky>i,.gf-dream-star{opacity:.8}}
 
-.gift-root[data-emotion=wink-left] .gf-eye:first-child,.gift-root[data-emotion=wink-right] .gf-eye:last-child{animation:gf-wink-eye 3.2s ease-in-out infinite}
-@keyframes gf-wink-eye{0%,60%,100%{transform:scaleY(1)}75%,85%{transform:scaleY(.55)}}
-.gift-root.gf-paused[data-emotion=wink-left] .gf-eye:first-child,.gift-root.gf-paused[data-emotion=wink-right] .gf-eye:last-child{animation-play-state:paused}
+/* Separate the open eye from its closed curve so the empty area never paints green. */
+.gift-root[data-emotion=wink-left] .gf-eye:first-child,.gift-root[data-emotion=wink-right] .gf-eye:last-child{position:relative;height:100%;background:transparent;border:0;box-shadow:none;filter:none;animation:none}
+.gift-root:is([data-emotion=wink-left],[data-emotion=wink-right]) .gf-eye::before,.gift-root:is([data-emotion=wink-left],[data-emotion=wink-right]) .gf-eye::after{box-sizing:border-box}
+.gift-root[data-emotion=wink-left] .gf-eye:first-child::before,.gift-root[data-emotion=wink-right] .gf-eye:last-child::before{content:'';position:absolute;inset:0;border-radius:21%;background:var(--gf-eye);box-shadow:0 0 10px var(--gf-eye),0 0 24px color-mix(in srgb,var(--gf-eye),transparent 28%),inset 0 0 6px #fff;transform-origin:center;animation:gf-wink-open 3.2s ease-in-out infinite}
+.gift-root[data-emotion=wink-left] .gf-eye:first-child::after,.gift-root[data-emotion=wink-right] .gf-eye:last-child::after{content:'';position:absolute;left:0;top:36.5%;width:100%;height:27%;border-radius:0 0 60% 60%;border-bottom:clamp(3px,.8cqw,8px) solid var(--gf-eye);background:transparent;filter:drop-shadow(0 0 7px var(--gf-eye));opacity:0;animation:gf-wink-closed 3.2s ease-in-out infinite}
+@keyframes gf-wink-open{0%,36%,90%,100%{transform:scaleY(1);opacity:1}46%,78%{transform:scaleY(.04);opacity:0}}
+@keyframes gf-wink-closed{0%,38%,88%,100%{opacity:0}46%,78%{opacity:1}}
+.gift-root.gf-paused[data-emotion=wink-left] .gf-eye:first-child::before,.gift-root.gf-paused[data-emotion=wink-left] .gf-eye:first-child::after,.gift-root.gf-paused[data-emotion=wink-right] .gf-eye:last-child::before,.gift-root.gf-paused[data-emotion=wink-right] .gf-eye:last-child::after{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.gift-root[data-emotion=wink-left] .gf-eye:first-child::before,.gift-root[data-emotion=wink-right] .gf-eye:last-child::before{display:none}.gift-root[data-emotion=wink-left] .gf-eye:first-child::after,.gift-root[data-emotion=wink-right] .gf-eye:last-child::after{opacity:1}}
 
 /* Extend the background to every edge while retaining the complete original. */
 .gf-bg{background-size:cover}.gf-bg:before,.gf-bg:after{content:'';position:absolute;inset:0;background-image:inherit;background-repeat:no-repeat;background-position:center}.gf-bg:before{background-size:cover;filter:blur(18px);transform:scale(1.08)}.gf-bg:after{background-size:contain}

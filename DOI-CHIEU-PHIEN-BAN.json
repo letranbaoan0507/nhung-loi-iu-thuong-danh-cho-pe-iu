@@ -1,14 +1,14 @@
 {
   "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
-  "source_commit": "998ebb5c36ce5f2db345c5b04701ec6635ffc2ce",
-  "published_version": 23,
+  "source_commit": "ad5b09ad8526e972653ca90545795514732b1c2f",
+  "published_version": 24,
   "unchanged_ui_and_assets": {
     "app/globals.css": "4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648",
     "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
     "app/studio-client.tsx": "7aaf1f9e888d34d5fbcfbe9d021ba0bb97484692a084d75c14c220560c9ed308",
     "app/lib/editor.mjs": "b51edd9dc6351922aaa2a7f919af57658a76acc546a1d97cb1bda978b4faa46e",
     "app/lib/gift-runtime.mjs": "525248311ee098f750891e0adcf3280f37b9f8d35a0805487f7868f94597e4e4",
-    "app/lib/gift-style.mjs": "2a0634f912ce51b7589b781f5785b34eb663e56eaf8a025355c44f7a6ae65cb4",
+    "app/lib/gift-style.mjs": "751a03537e694c51162604543b9f9d3021d84b5916e0db5b6a614aecb394f132",
     "app/lib/model.mjs": "044417d95e63c2a91161ccd17abe3d72a7e7104c806991e01989fc88f51a5e75",
     "app/lib/font-style.mjs": "22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e",
     "app/lib/scene-timing.mjs": "861ac7a04ffd7cb86e539cab6fa7b0770a3ecb75c208f731c110287ebae3db53",
@@ -57,11 +57,11 @@
     "Download QR exports a PNG image only, never gift HTML",
     "Removed the Safari instruction popup and its help button at the owner's request",
     "Larger right-aligned decoration with preserved aspect ratio; retain left decoration with albums",
-    "Winking eye uses only a curved line with no animated filled rectangle"
+    "Restore one-eye open-close-open wink animation; closed phase only renders a curve with no filled background"
   ],
   "historical_build_archive": {
     "path": "ban-build-sites.tar.gz",
     "published_version": 12,
-    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 23."
+    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 24."
   }
 }
