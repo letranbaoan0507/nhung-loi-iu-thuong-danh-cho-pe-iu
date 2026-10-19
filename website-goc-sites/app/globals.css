@@ -17,3 +17,5 @@
 .st-page-head h1,.st-modal-head h2,.st-gift-summary h3,.st-gift-card-body h2{letter-spacing:0;line-height:1.4}
 
 .st-preview-toolbar{flex-wrap:wrap}.st-robot-settings{padding:16px;background:#fff;border:1px solid var(--st-line);border-radius:10px;margin-bottom:22px}.st-robot-settings .st-small-note{margin-bottom:0}
+
+.st-share-card{grid-template-columns:minmax(230px,300px) minmax(0,1fr)}.st-qr{padding:4px}.st-qr svg{display:block;width:100%;height:auto}@media(max-width:650px){.st-share-card{grid-template-columns:1fr}.st-qr{width:min(100%,300px)}}

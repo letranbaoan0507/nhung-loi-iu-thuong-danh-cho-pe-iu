@@ -1,17 +1,17 @@
 {
   "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
-  "source_commit": "e8f6ec1c97e66f622c75d1c163e6fbd1080da7b5",
-  "published_version": 12,
+  "source_commit": "abcda1c4dfe299190f7f2ed86fcf248216c9484b",
+  "published_version": 16,
   "unchanged_ui_and_assets": {
-    "app/globals.css": "82627931491089a28123cd1d01bd303c580512ead5b6de262fed34fc891d71f4",
+    "app/globals.css": "4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648",
     "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
     "app/studio-client.tsx": "e92ca42e1a16147ccb681330e23fc4f85abae729663ba684dc1333209772ba7e",
-    "app/lib/editor.mjs": "22d170d4dee8e6a768c784692ce8208fee5720b0b458f37827cb3ecc43de001f",
-    "app/lib/gift-runtime.mjs": "e06158a6328a6d5757c8d1928e5337223b1e13db6bbd840a79841397ead37b21",
-    "app/lib/gift-style.mjs": "8560ca8234f709fde4c96cb51af4b19b0ed1f95579446a546526ef062a99c61d",
-    "app/lib/model.mjs": "9ecc929b62c4058dc0334c3c9e0d7e30d70cedc072345e4fb2884b7917646ae4",
+    "app/lib/editor.mjs": "56e013698bbb66ee4f4fb525116cef50ed760e0efc70c87f620162e0d7119ebe",
+    "app/lib/gift-runtime.mjs": "a94f8e1c8693d3cd1db4b2e7b5e185dd07590d353e75edd7a5b67a456ba1e25c",
+    "app/lib/gift-style.mjs": "7ae3936f542562d93c358600e2137aa7f7d468706964309a7a0c03eb0c750489",
+    "app/lib/model.mjs": "1082834af23bab1d94b25989bae6a4a14215cd4cd0312898db1d69aedaa3a419",
     "app/lib/font-style.mjs": "22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e",
-    "app/lib/scene-timing.mjs": "892fce11b0ac7be392a212de35f6232ecc302bd648dba36af36f3922e1443b7d",
+    "app/lib/scene-timing.mjs": "861ac7a04ffd7cb86e539cab6fa7b0770a3ecb75c208f731c110287ebae3db53",
     "app/lib/crypto.mjs": "d5c186c0ed2af1077098efc88940695fd85ba32c90c4e2c245747b808470b982",
     "app/lib/viewer.mjs": "c7c8ab063cf52f92c4191d0080d473b1d4d5f8aa6cda1ea921ab91db5ba4dd32",
     "app/lib/offline.mjs": "5d598c6d905b138bff3c977021bd4778123e35580553ba55ffbfbcad472ed1c8",
@@ -27,7 +27,8 @@
     "public/fonts/loithuong-sans.woff": "398dcb0d6f9c5ae6b580f15352ae6518dda7dc7f6c6ad55991c11477c8685855",
     "public/fonts/loithuong-serif.woff": "3723498e6765b57487da754c79f339ee65b93dc48219a72a52ca97c09df91ffb",
     "public/fonts/LICENSE-DejaVu.txt": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
-    "public/fonts/loithuong-sans-bold.woff": "67160c6d7fae9c63eb76d7d499eb50d0aa7b54a4d84be72ec8777b85ed0dfce0"
+    "public/fonts/loithuong-sans-bold.woff": "67160c6d7fae9c63eb76d7d499eb50d0aa7b54a4d84be72ec8777b85ed0dfce0",
+    "app/lib/heart-qr.mjs": "695f99148bdd99348720a96b795c441a58419a798b9e1dfb014878b4e8e652f9"
   },
   "vercel_changes": [
     "Next.js hosting configuration",
@@ -40,5 +41,16 @@
     "Browser IndexedDB drafts and saved gifts",
     "Hosted database and uploaded gift media",
     "Account passwords and deployment secrets"
-  ]
+  ],
+  "approved_changes": [
+    "Per-page album, decoration, both or neither",
+    "Closed-eye memory photos: left, center, right with fade and image-only darkening",
+    "Album auto duration includes every photo and at least 2 seconds of waiting",
+    "Heart QR matches supplied pattern without an inner square gap"
+  ],
+  "historical_build_archive": {
+    "path": "ban-build-sites.tar.gz",
+    "published_version": 12,
+    "note": "Historical original build. Current source in both folders matches approved Sites version 16."
+  }
 }

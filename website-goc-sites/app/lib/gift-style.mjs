@@ -31,7 +31,7 @@ export const giftStyles=fontStyles+String.raw`
 .gf-dream-star{position:absolute;left:50%;top:60%;translate:-50% -50%;font:normal clamp(28px,8cqw,78px)/1 'LoiThuong Sans',Arial,sans-serif;color:#d7faff;text-shadow:0 0 8px #fff,0 0 25px #67d4ff,0 0 50px #4b89ff;animation:gf-star-glow 3s ease-in-out infinite alternate}.gf-dream-star:before,.gf-dream-star:after{content:'';position:absolute;inset:-5%;border:1px solid #a2dfff66;transform:rotate(45deg)}.gf-dream-star:after{inset:-20%;border-radius:50%;border-color:#a2dfff22}
 @keyframes gf-star-glow{from{opacity:.4}to{opacity:1}}
 .gift-root[data-emotion=closed-stars]{background:#000}.gift-root[data-emotion=closed-stars] .gf-night-sky{display:block}
-.gift-root[data-emotion=closed-stars] :is(.gf-bg,.gf-halo,.gf-art,.gf-sticker,.gf-photo,.gf-heart,.gf-meadow,.gf-orbit,.gf-tiny-stars){display:none!important}
+.gift-root[data-emotion=closed-stars] :is(.gf-bg,.gf-halo,.gf-art,.gf-heart,.gf-meadow,.gf-orbit,.gf-tiny-stars){display:none!important}
 .gift-root[data-emotion=closed-stars] .gf-robot{left:50%!important;top:42%!important}.gift-root[data-emotion=closed-stars] .gf-mouth{opacity:0}
 .gf-paused .gf-wink-hearts i,.gf-paused .gf-night-sky>i,.gf-paused .gf-dream-star{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.gf-wink-hearts i{display:none}.gf-wink-hearts i:first-child{display:block;opacity:1;transform:translate(15px,-25px)}.gf-night-sky>i,.gf-dream-star{opacity:.8}}
@@ -71,4 +71,15 @@ export const giftStyles=fontStyles+String.raw`
 .gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-robot{grid-column:2;grid-row:1}
 .gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-photo{grid-column:3;grid-row:1}
 @container gift-stage (max-width:540px) and (min-height:430px){.gf-visuals[data-items="3"][data-album="true"]{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1.5fr)}.gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-robot{width:min(100%,140cqh)!important}.gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-photo{grid-column:1 / -1;grid-row:2}}
+
+/* Memory photos share the scene clock, so pause, speed and scene changes stay in sync. */
+.gift-root .gf-layout .gf-visuals[data-memory="true"]>.gf-photo{position:absolute!important;inset:auto!important;left:var(--memory-x,50%)!important;top:var(--memory-y,50%)!important;width:42%!important;height:64%!important;max-width:100%;transform:var(--memory-transform)!important;grid-column:auto!important;grid-row:auto!important;animation:none;z-index:6;pointer-events:none;will-change:transform,opacity;filter:drop-shadow(0 8px 22px #0008)}
+.gf-visuals[data-memory="true"]>.gf-photo img{filter:brightness(.53) saturate(.58) sepia(.22);border-radius:8px}
+.gf-visuals[data-memory="true"]>.gf-photo figcaption{color:#d6c7d5;text-shadow:0 1px 6px #000;z-index:1}
+.gift-root[data-memory="true"] .gf-dream-star{opacity:.2;font-size:clamp(18px,4cqw,40px)}
+.gift-root[data-emotion="closed-stars"] .gf-eyes{transform:none}
+.gift-root .gf-layout .gf-visuals[data-memory="true"]>.gf-robot{grid-column:1 / -1;grid-row:1;width:min(65%,140cqh,580px)!important}
+.gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-robot{grid-column:2;grid-row:1;width:min(100%,140cqh,580px)!important}
+.gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-sticker{grid-column:1!important;grid-row:1}
+@container gift-stage (max-width:540px) and (min-height:430px){.gf-visuals[data-memory="true"]{grid-template-rows:minmax(0,1fr)!important}.gift-root .gf-layout .gf-visuals[data-memory="true"]>.gf-photo{width:64%!important;height:70%!important}.gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-robot{grid-column:2!important;width:100%!important}}
 `;
