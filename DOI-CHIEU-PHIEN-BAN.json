@@ -1,12 +1,12 @@
 {
   "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
-  "source_commit": "61f5a39a62cda4ac101c1e3c220ed32a4d44d667",
-  "published_version": 25,
+  "source_commit": "fa293328f560afd1203a835b5329a43b8a8a8e3e",
+  "published_version": 26,
   "unchanged_ui_and_assets": {
     "app/globals.css": "4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648",
     "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
     "app/studio-client.tsx": "7aaf1f9e888d34d5fbcfbe9d021ba0bb97484692a084d75c14c220560c9ed308",
-    "app/lib/editor.mjs": "b51edd9dc6351922aaa2a7f919af57658a76acc546a1d97cb1bda978b4faa46e",
+    "app/lib/editor.mjs": "1c4a1ac2148c7270dbb2eca84dbab2f16664f6798a993cbf48369c4ebf04d19c",
     "app/lib/gift-runtime.mjs": "31c32e06b31ddbff7bb3976da2bfccf125c181182903072d40d2094950ba662d",
     "app/lib/gift-style.mjs": "97f101a15d71c05b88738eba128795234083068aa3d555dcb54ec045d2dee046",
     "app/lib/model.mjs": "044417d95e63c2a91161ccd17abe3d72a7e7104c806991e01989fc88f51a5e75",
@@ -31,7 +31,8 @@
     "app/lib/heart-qr.mjs": "695f99148bdd99348720a96b795c441a58419a798b9e1dfb014878b4e8e652f9",
     "app/lib/share-link.mjs": "88ae8ed63cf4b8285d0c9cc8dabbb2f79150c398b2ff9465173219c79be4b36d",
     "app/lib/gift-entry.mjs": "193e609737db9f2ae14791cfce781fa59b5e4d4d0ad5722461fdd14b8c1ac514",
-    "app/lib/gift-manifest.mjs": "f5d7a28e7fba4bd94e51ff1b61c0954b3699f7c6745f3f601303a2218f6e9848"
+    "app/lib/gift-manifest.mjs": "f5d7a28e7fba4bd94e51ff1b61c0954b3699f7c6745f3f601303a2218f6e9848",
+    "app/lib/qr-download.mjs": "7fd8c7fab176930d59da34183849e9ea070c4492cf1c92179d340112e8ace433"
   },
   "vercel_changes": [
     "Next.js hosting configuration",
@@ -58,11 +59,12 @@
     "Removed the Safari instruction popup and its help button at the owner's request",
     "Larger right-aligned decoration with preserved aspect ratio; retain left decoration with albums",
     "Restore one-eye open-close-open wink animation; closed phase only renders a curve with no filled background",
-    "Portrait phone prompt with animated rotation illustration; resumes landscape viewing without losing slide time or manual pause"
+    "Portrait phone prompt with animated rotation illustration; resumes landscape viewing without losing slide time or manual pause",
+    "QR image is rasterized before clicking; a native download link saves the prepared PNG directly with no SVG image decoder or deferred click"
   ],
   "historical_build_archive": {
     "path": "ban-build-sites.tar.gz",
     "published_version": 12,
-    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 25."
+    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 26."
   }
 }
