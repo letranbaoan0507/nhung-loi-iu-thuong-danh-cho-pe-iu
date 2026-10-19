@@ -82,4 +82,20 @@ export const giftStyles=fontStyles+String.raw`
 .gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-robot{grid-column:2;grid-row:1;width:min(100%,140cqh,580px)!important}
 .gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-sticker{grid-column:1!important;grid-row:1}
 @container gift-stage (max-width:540px) and (min-height:430px){.gf-visuals[data-memory="true"]{grid-template-rows:minmax(0,1fr)!important}.gift-root .gf-layout .gf-visuals[data-memory="true"]>.gf-photo{width:64%!important;height:70%!important}.gift-root .gf-layout .gf-visuals[data-memory="true"][data-items="2"]>.gf-robot{grid-column:2!important;width:100%!important}}
+.gf-fullscreen-shell{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;background:#0b0d17;overflow:hidden;overscroll-behavior:contain}
+.gf-fullscreen-shell::backdrop{background:#0b0d17}
+.gf-fullscreen-shell>.gift-root{width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;border-radius:0!important}
+.gift-root:fullscreen{width:100vw!important;height:100vh!important;height:100dvh!important;min-height:0!important;max-height:none!important;border-radius:0!important}
+.gift-root:-webkit-full-screen{width:100vw!important;height:100vh!important;min-height:0!important;max-height:none!important;border-radius:0!important}
+.gift-root .gf-controls [data-gf="fullscreen"]{min-width:36px;min-height:36px}
+@media(pointer:coarse){.gift-root .gf-controls button{min-width:40px;min-height:40px}.gift-root .gf-controls{opacity:.85}}
+@keyframes gf-scene-fade{from{opacity:0}to{opacity:1}}
+@keyframes gf-scene-slide-left{from{opacity:0;transform:translateX(6%)}to{opacity:1;transform:none}}
+@keyframes gf-scene-slide-right{from{opacity:0;transform:translateX(-6%)}to{opacity:1;transform:none}}
+@keyframes gf-scene-zoom{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+.gift-root.gf-paused .gf-layout{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.gift-root .gf-layout{animation:none!important}}
+.gf-transition-out{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none!important;contain:layout paint}
+.gf-transition-out *{pointer-events:none!important}
+@media(prefers-reduced-motion:reduce){.gf-transition-out{display:none!important}}
 `;
