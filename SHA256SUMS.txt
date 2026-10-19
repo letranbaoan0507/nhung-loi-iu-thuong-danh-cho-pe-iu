@@ -1,6 +1,6 @@
 8a1e1e162933e57933a92aa2256e5932813bd823a13c6c55e21cf0b97f3387be  ban-build-sites.tar.gz
 c8856237e99b8df182641fed6a3b75fea4cfd9095b4fcb87cc26931d6106bf31  DOC-TRUOC.md
-a56086efa11be6484b46059f7c22ea08832abca8c12bd0b91931068629cf85d4  DOI-CHIEU-PHIEN-BAN.json
+d8a2774ab9e866d6cb75a8562830f19ce2d8058da2e37757d396d480ea8bf761  DOI-CHIEU-PHIEN-BAN.json
 550d19e899ed04865aec27374a0b4fadf3e1e764dff92b8c8e470cb1f55f7d91  HUONG-DAN-GITHUB-VERCEL.md
 add2a98bb19fbbbcc15a7d4ef4d8a0c937af80c9994af80e22995094f56afb32  KIEM-TRA.md
 937466358af84a8d44e468500248e0b48db3ee94b1a1dd9fc552a61b15ca8004  vercel/.env.example
@@ -18,7 +18,7 @@ e6a65f7d31dc4953a3cb37bf043d8d57f07d8441e2659265ea44d808048c21d3  vercel/app/api
 4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648  vercel/app/globals.css
 6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0  vercel/app/layout.tsx
 d5c186c0ed2af1077098efc88940695fd85ba32c90c4e2c245747b808470b982  vercel/app/lib/crypto.mjs
-9fa2b070a957107f179ce98027fd4d55103160719fe072a7025fce1d3effd107  vercel/app/lib/editor.mjs
+b51edd9dc6351922aaa2a7f919af57658a76acc546a1d97cb1bda978b4faa46e  vercel/app/lib/editor.mjs
 22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e  vercel/app/lib/font-style.mjs
 e6f48228547cbada36b464da6f99584aec27997f89c76233a34d1f01e51bc76c  vercel/app/lib/gift-entry.mjs
 f5d7a28e7fba4bd94e51ff1b61c0954b3699f7c6745f3f601303a2218f6e9848  vercel/app/lib/gift-manifest.mjs
@@ -89,7 +89,7 @@ a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d  website-goc-si
 4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648  website-goc-sites/app/globals.css
 6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0  website-goc-sites/app/layout.tsx
 d5c186c0ed2af1077098efc88940695fd85ba32c90c4e2c245747b808470b982  website-goc-sites/app/lib/crypto.mjs
-9fa2b070a957107f179ce98027fd4d55103160719fe072a7025fce1d3effd107  website-goc-sites/app/lib/editor.mjs
+b51edd9dc6351922aaa2a7f919af57658a76acc546a1d97cb1bda978b4faa46e  website-goc-sites/app/lib/editor.mjs
 22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e  website-goc-sites/app/lib/font-style.mjs
 e6f48228547cbada36b464da6f99584aec27997f89c76233a34d1f01e51bc76c  website-goc-sites/app/lib/gift-entry.mjs
 f5d7a28e7fba4bd94e51ff1b61c0954b3699f7c6745f3f601303a2218f6e9848  website-goc-sites/app/lib/gift-manifest.mjs

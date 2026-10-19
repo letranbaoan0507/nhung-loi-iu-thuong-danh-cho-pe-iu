@@ -1,12 +1,12 @@
 {
   "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
-  "source_commit": "5d98cbc2dc3f14da3ebebe53cecd7962471801d5",
-  "published_version": 20,
+  "source_commit": "90e1e4043853d32da3a6fbdce70ccaecf70ac7a0",
+  "published_version": 21,
   "unchanged_ui_and_assets": {
     "app/globals.css": "4cb60be34bed8697708416af8671aaadc5fd5605c1917e9c55ea8e7f3e204648",
     "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
     "app/studio-client.tsx": "7aaf1f9e888d34d5fbcfbe9d021ba0bb97484692a084d75c14c220560c9ed308",
-    "app/lib/editor.mjs": "9fa2b070a957107f179ce98027fd4d55103160719fe072a7025fce1d3effd107",
+    "app/lib/editor.mjs": "b51edd9dc6351922aaa2a7f919af57658a76acc546a1d97cb1bda978b4faa46e",
     "app/lib/gift-runtime.mjs": "dc5cfcba6e3004555dd098e5860dd72a1a7fd414db53ff1ddfb2f76b7f53505a",
     "app/lib/gift-style.mjs": "da19d203dc5f75869bd779df5bf2a58d87c1bffba3d82e61865af7eefb214bd7",
     "app/lib/model.mjs": "044417d95e63c2a91161ccd17abe3d72a7e7104c806991e01989fc88f51a5e75",
@@ -60,6 +60,6 @@
   "historical_build_archive": {
     "path": "ban-build-sites.tar.gz",
     "published_version": 12,
-    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 20."
+    "note": "Historical original build. Current shared UI source in both folders matches approved Sites version 21."
   }
 }
