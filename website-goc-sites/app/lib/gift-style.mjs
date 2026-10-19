@@ -107,6 +107,18 @@ export const giftStyles=fontStyles+String.raw`
 .gf-transition-out *{pointer-events:none!important}
 @media(prefers-reduced-motion:reduce){.gf-transition-out{display:none!important}}
 .st-viewer-entry{height:100vh;height:100dvh;min-height:100svh}
+.gf-orientation{display:none;position:fixed;inset:0;z-index:50;min-height:100%;padding:32px 24px;background:radial-gradient(ellipse at 50% 35%,#39213e,transparent 65%),#0b0d17;color:#fff0f8;text-align:center;align-items:center;justify-content:center;flex-direction:column;font-family:'LoiThuong Sans',Arial,sans-serif;pointer-events:auto}
+.gf-orientation h2{font:400 clamp(22px,6vw,32px)/1.5 'LoiThuong Sans',Arial,sans-serif;max-width:350px;margin:32px 0 12px;text-wrap:balance}
+.gf-orientation p{font-size:14px;line-height:1.7;color:#c7b0c5;max-width:310px;margin:0;text-wrap:balance}
+.gf-rotate-visual{position:relative;width:164px;height:164px;display:grid;place-items:center;color:#f2a6c8}
+.gf-rotate-phone{position:relative;width:64px;height:112px;border:3px solid currentColor;border-radius:13px;display:grid;place-items:center;background:#201529;box-shadow:0 0 32px #f2a6c822;transform-origin:center;animation:gf-phone-turn 3s ease-in-out infinite}
+.gf-rotate-phone:before{content:'';position:absolute;top:7px;left:22px;width:14px;height:3px;background:currentColor;border-radius:4px;opacity:.6}
+.gf-rotate-phone span{font-size:34px;line-height:1}.gf-rotate-phone i{position:absolute;bottom:7px;width:18px;height:3px;border-radius:3px;background:currentColor;opacity:.6}
+.gf-rotate-arrow{position:absolute;inset:-7px;width:178px;height:178px;opacity:.7;animation:gf-turn-arrow 3s ease-in-out infinite}
+@keyframes gf-phone-turn{0%,15%{transform:rotate(0)}55%,85%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
+@keyframes gf-turn-arrow{0%,15%,100%{opacity:.3}55%,85%{opacity:.9}}
+@media(orientation:portrait) and (pointer:coarse){.gf-orientation{display:flex}}
+@media(prefers-reduced-motion:reduce){.gf-orientation .gf-rotate-phone{animation:none!important;transform:rotate(-90deg)}.gf-orientation .gf-rotate-arrow{animation:none!important}}
 .gift-root .gf-controls{bottom:max(3%,env(safe-area-inset-bottom))}
 .gift-root .gf-vinyl{bottom:max(3%,env(safe-area-inset-bottom))}
 `;
