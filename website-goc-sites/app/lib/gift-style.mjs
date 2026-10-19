@@ -37,7 +37,7 @@ export const giftStyles=fontStyles+String.raw`
 @media(prefers-reduced-motion:reduce){.gf-wink-hearts i{display:none}.gf-wink-hearts i:first-child{display:block;opacity:1;transform:translate(15px,-25px)}.gf-night-sky>i,.gf-dream-star{opacity:.8}}
 
 .gift-root[data-emotion=wink-left] .gf-eye:first-child,.gift-root[data-emotion=wink-right] .gf-eye:last-child{animation:gf-wink-eye 3.2s ease-in-out infinite}
-@keyframes gf-wink-eye{0%,60%,100%{height:27%;background:transparent;border-bottom-width:clamp(3px,.8cqw,8px);border-radius:0 0 60% 60%}75%,85%{height:100%;background:var(--gf-eye);border-bottom-width:0;border-radius:21%}}
+@keyframes gf-wink-eye{0%,60%,100%{transform:scaleY(1)}75%,85%{transform:scaleY(.55)}}
 .gift-root.gf-paused[data-emotion=wink-left] .gf-eye:first-child,.gift-root.gf-paused[data-emotion=wink-right] .gf-eye:last-child{animation-play-state:paused}
 
 /* Extend the background to every edge while retaining the complete original. */
@@ -57,6 +57,7 @@ export const giftStyles=fontStyles+String.raw`
 .gf-layout .gf-photo img{flex:1;min-height:0;width:100%;height:0;max-height:100%;object-fit:contain;object-position:center}.gf-layout .gf-photo figcaption{flex:none;max-height:15%;margin:0;text-align:center;pointer-events:auto}
 .gift-root .gf-layout .gf-visuals>.gf-sticker{position:relative!important;inset:auto!important;transform:none!important;grid-column:3;grid-row:1;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%;min-width:0;min-height:0;object-fit:contain;object-position:center;opacity:1;filter:none}
 .gf-visuals[data-album="false"]>.gf-sticker{grid-column:2!important}
+.gift-root .gf-layout .gf-visuals[data-album="false"][data-memory="false"]>.gf-sticker{width:calc(100% + 3cqw)!important;height:120%!important;max-width:none!important;max-height:none;justify-self:start;align-self:end;object-position:right bottom}
 .gf-layout .gf-visuals>.gf-art{display:none!important}.gf-layout .gf-visuals[data-art="true"]>.gf-art{display:block!important;position:relative;inset:auto;grid-column:2;grid-row:1;width:100%;height:100%;opacity:1;transform:none;margin:0}
 .gf-copy{min-height:0;max-height:20cqh;display:grid;gap:clamp(6px,1cqh,12px);align-content:center;pointer-events:auto}
 .gift-root .gf-layout .gf-copy>.gf-subline,.gift-root .gf-layout .gf-copy>.gf-signature{position:relative!important;inset:auto!important;width:100%!important;margin:0;text-align:center}
@@ -66,6 +67,7 @@ export const giftStyles=fontStyles+String.raw`
 @container gift-stage (max-width:540px) and (min-height:430px){.gf-layout{padding:20px 16px 64px;gap:12px}.gf-visuals[data-items="2"],.gf-visuals[data-items="3"]{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,2fr);gap:10px}.gift-root .gf-layout .gf-visuals[data-items="2"]>.gf-robot,.gift-root .gf-layout .gf-visuals[data-items="3"]>.gf-robot{grid-column:1 / -1;grid-row:1;width:min(100%,calc(60cqh - 12px),380px)!important}.gift-root .gf-layout .gf-visuals>.gf-photo,.gift-root .gf-layout .gf-visuals>.gf-sticker,.gf-layout .gf-visuals[data-art="true"]>.gf-art{grid-row:2;grid-column:1 / -1}.gift-root .gf-layout .gf-visuals[data-items="3"]>.gf-photo{grid-column:1}.gift-root .gf-layout .gf-visuals[data-items="3"]>.gf-sticker{grid-column:2}.gf-visuals[data-album="false"]>.gf-sticker{grid-column:1 / -1!important}.gf-copy{max-height:20cqh}.gf-layout .gf-mainline{font-size:clamp(16px,5.2cqw,25px)}}
 
 /* When the album is visible, decoration sits on the robot's left. */
+@container gift-stage (max-width:540px) and (min-height:430px){.gift-root .gf-layout .gf-visuals[data-album="false"][data-memory="false"]>.gf-sticker{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%;justify-self:center;align-self:center;object-position:center}}
 .gf-visuals[data-items="3"][data-album="true"]{grid-template-columns:repeat(3,minmax(0,1fr))}
 .gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-sticker{grid-column:1;grid-row:1}
 .gift-root .gf-layout .gf-visuals[data-items="3"][data-album="true"]>.gf-robot{grid-column:2;grid-row:1}
@@ -99,10 +101,6 @@ export const giftStyles=fontStyles+String.raw`
 .gf-transition-out *{pointer-events:none!important}
 @media(prefers-reduced-motion:reduce){.gf-transition-out{display:none!important}}
 .st-viewer-entry{height:100vh;height:100dvh;min-height:100svh}
-.gf-install-help{position:absolute;z-index:25;inset:0;display:flex;align-items:center;justify-content:center;background:#070911d9;padding:24px;backdrop-filter:blur(7px);pointer-events:auto}
-.gf-install-help>div{width:min(430px,100%);border:1px solid #efbfd74d;border-radius:18px;background:#1c1424;padding:24px;text-align:left;box-shadow:0 15px 60px #0007}
-.gf-install-help h3{font-size:20px;line-height:1.5;margin:0 0 14px}.gf-install-help p,.gf-install-help li{font-size:14px;line-height:1.7;color:#e5cfdf}.gf-install-help ol{padding-left:23px}.gf-install-help button{display:block;margin-top:16px;padding:10px 18px;border-radius:30px;border:1px solid #efbfd75e;background:#f1b5d018;color:#ffe8f2}
-.gf-intro .gf-home-help{margin:12px 0 0;border:0;background:none;box-shadow:none;font-size:11px;padding:7px 12px;text-decoration:underline;color:#c7b0c5}
 .gift-root .gf-controls{bottom:max(3%,env(safe-area-inset-bottom))}
 .gift-root .gf-vinyl{bottom:max(3%,env(safe-area-inset-bottom))}
 `;
