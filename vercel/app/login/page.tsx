@@ -1,0 +1,10 @@
+'use client';
+import {useState,type FormEvent} from 'react';
+import {browserClient} from '@/lib/supabase/client';
+import {fontStyles} from '../lib/font-style.mjs';
+export default function Login(){
+ const [message,setMessage]=useState(''),[busy,setBusy]=useState(false);
+ const ready=!!(process.env.NEXT_PUBLIC_SUPABASE_URL&&process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY);
+ async function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();setBusy(true);setMessage('');try{const values=new FormData(event.currentTarget);const {error}=await browserClient().auth.signInWithPassword({email:String(values.get('email')),password:String(values.get('password'))});if(error)throw error;window.location.href='/';}catch{setMessage('Chưa đăng nhập được. Kiểm tra email, mật khẩu hoặc kết nối rồi thử lại.');}finally{setBusy(false);}}
+ return <><style>{fontStyles}</style><main style={{maxWidth:420,margin:'10vh auto',padding:28}}><img src="/icon-192.png" width="64" height="64" alt="Logo AN"/><h1 style={{marginTop:24}}>Lời Thương Studio</h1><p>Đăng nhập để lưu và tạo link món quà.</p>{!ready?<p>Chưa cấu hình Supabase. Bạn vẫn có thể soạn quà, lưu trên thiết bị và tải JSON. Xem hướng dẫn trong gói mã nguồn để bật tạo link.</p>:<form onSubmit={submit}><label className="st-field"><span>Email</span><input name="email" type="email" autoComplete="username" required/></label><label className="st-field"><span>Mật khẩu tài khoản</span><input name="password" type="password" autoComplete="current-password" required/></label><button className="st-button primary full" disabled={busy}>{busy?'Đang đăng nhập…':'Đăng nhập'}</button><p role="alert" style={{marginTop:16}}>{message}</p></form>}<a className="st-text-button" href="/">← Về website</a>{ready&&<button className="st-text-button" style={{display:"block",marginTop:12}} onClick={async()=>{await browserClient().auth.signOut();window.location.href="/";}}>Đăng xuất tài khoản hiện tại</button>}<p style={{fontSize:12,marginTop:24}}>Tài khoản do chủ website tạo trong Supabase. Mật khẩu tài khoản và mật khẩu mở món quà là hai mật khẩu riêng.</p></main></>;
+}

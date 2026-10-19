@@ -1,0 +1,44 @@
+{
+  "website": "https://loi-thuong-studio.bett-yrobinsonw870.chatgpt.site",
+  "source_commit": "e8f6ec1c97e66f622c75d1c163e6fbd1080da7b5",
+  "published_version": 12,
+  "unchanged_ui_and_assets": {
+    "app/globals.css": "82627931491089a28123cd1d01bd303c580512ead5b6de262fed34fc891d71f4",
+    "app/layout.tsx": "6c9cbfd959eeb26100a642c69ecf3f7d5ec35a14b4f1acba8dd6a433db4253e0",
+    "app/studio-client.tsx": "e92ca42e1a16147ccb681330e23fc4f85abae729663ba684dc1333209772ba7e",
+    "app/lib/editor.mjs": "22d170d4dee8e6a768c784692ce8208fee5720b0b458f37827cb3ecc43de001f",
+    "app/lib/gift-runtime.mjs": "e06158a6328a6d5757c8d1928e5337223b1e13db6bbd840a79841397ead37b21",
+    "app/lib/gift-style.mjs": "8560ca8234f709fde4c96cb51af4b19b0ed1f95579446a546526ef062a99c61d",
+    "app/lib/model.mjs": "9ecc929b62c4058dc0334c3c9e0d7e30d70cedc072345e4fb2884b7917646ae4",
+    "app/lib/font-style.mjs": "22b3862786f123df853aa7454bbb7e502e7c5f2bee88ad9566275407f700a85e",
+    "app/lib/scene-timing.mjs": "892fce11b0ac7be392a212de35f6232ecc302bd648dba36af36f3922e1443b7d",
+    "app/lib/crypto.mjs": "d5c186c0ed2af1077098efc88940695fd85ba32c90c4e2c245747b808470b982",
+    "app/lib/viewer.mjs": "c7c8ab063cf52f92c4191d0080d473b1d4d5f8aa6cda1ea921ab91db5ba4dd32",
+    "app/lib/offline.mjs": "5d598c6d905b138bff3c977021bd4778123e35580553ba55ffbfbcad472ed1c8",
+    "public/qr.js": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
+    "public/globe.svg": "d051a8c47936990a9085693d307bb7cea1bc1b6d7ed956bcbaacf674f4ec96b9",
+    "public/icon-192.png": "a102f0399a5321554a1f0e309f0d68800dbd40a71923e8469a0abd2319234319",
+    "public/favicon.svg": "7dbc5d03393170a41e443fa253e9fb3b71acf923851153da90c19068143fe7ee",
+    "public/window.svg": "decf1cf7bb22b5c99c4857cfcd5718ce5465c4454166317589c83fc73df74b66",
+    "public/logo-an-original.jpg": "d48d73efce7ce835832d2f77520fa09dc269c478c743dbc17ac8b15b39106278",
+    "public/favicon.ico": "7c0d1794e5a7442aa1f420fb663f8c1502df319d6962fd6c7f0ac186b52b42ca",
+    "public/apple-touch-icon.png": "fafa30425310d73bb6d241a036c66cbd1b550700a49f18fd193df5a0f321d668",
+    "public/file.svg": "1e0ae4d1a1ddfa36752988647b731e4abf150c414d069ec83c96fb0aaeff0307",
+    "public/fonts/loithuong-sans.woff": "398dcb0d6f9c5ae6b580f15352ae6518dda7dc7f6c6ad55991c11477c8685855",
+    "public/fonts/loithuong-serif.woff": "3723498e6765b57487da754c79f339ee65b93dc48219a72a52ca97c09df91ffb",
+    "public/fonts/LICENSE-DejaVu.txt": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+    "public/fonts/loithuong-sans-bold.woff": "67160c6d7fae9c63eb76d7d499eb50d0aa7b54a4d84be72ec8777b85ed0dfce0"
+  },
+  "vercel_changes": [
+    "Next.js hosting configuration",
+    "Supabase account authentication in place of platform login",
+    "PostgreSQL and private Storage adapters",
+    "Direct media transfer to preserve existing size allowances",
+    "Supabase setup and deployment documentation"
+  ],
+  "data_not_included": [
+    "Browser IndexedDB drafts and saved gifts",
+    "Hosted database and uploaded gift media",
+    "Account passwords and deployment secrets"
+  ]
+}
